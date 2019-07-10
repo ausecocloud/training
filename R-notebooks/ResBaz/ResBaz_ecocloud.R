@@ -4,7 +4,7 @@
 
 ## Set working directory
 setwd("/home/jovyan/workspace/ResBaz")
-getwd
+getwd()
 
 ## Install packages
 library(tidyr)
