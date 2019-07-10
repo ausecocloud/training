@@ -32,12 +32,15 @@ boxplot(occurrence[, c("B12", "B13", "B14")], #change B01 etc to the variables i
         xlab = "Climate Variables",
         ylab = "Precipitation")
 
+## Get the average value for each predictor variable
+predictors <- subset(occurrence[,4:10])
+colMeans(predictors[sapply(predictors, is.numeric)])
+
 ## Generate summary histograms
 ggplot(melt(occurrence[,4:10]),aes(x=value)) + geom_histogram() + facet_wrap(~variable, scales = "free")
 
 ## Generate a correlation plot for your predictor variables
-main_variables <- subset(occurrence[,4:10])
-variable_correlations <- cor(main_variables, method="pearson")
+variable_correlations <- cor(predictors, method="pearson")
 corrplot(variable_correlations, type = "upper", order = "hclust", 
          tl.col = "black", tl.srt = 45)
 
