@@ -12,7 +12,7 @@ Use these files to run Polygon region selections in SilverEye.
 
 Create `data/polygons` folders (in your ecoCloud Jupyter instance) to download polygon files there.
 
-Execute the following sample code to download a polygon file, available from this Github repository, on the left.
+Execute the following sample code, in your Jupyter notebook, to download one of the polygon files from the Github repository, on the left.
 
 ```python
 import requests
